@@ -4,6 +4,11 @@ const config = {
     'jpg',
     'jpeg'
   ],
+  supported_modes: {
+    near: 'near',
+    prev: 'prev',
+    next: 'next',
+  }
 }
 
 module.exports.config = config
