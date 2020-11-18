@@ -1,13 +1,3 @@
-/*
-  TODO : 
-    - Upload to github
-    - fill npm info
-      - package.json
-      - LICENSE
-      - README
-    - deploy
-*/
-
 'use strict'
 
 const { createIO } = require('./io')

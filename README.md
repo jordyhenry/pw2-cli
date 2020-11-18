@@ -35,3 +35,7 @@ This project was done for the cs50  Final Project assignment.
 ## License
 
 [MIT](https://github.com/jordyhenry/pw2-cli/blob/master/LICENSE)
+
+## TODO
+- Update the project to use typescript
+- Fix any English misspells (sorry guys, it's not my mother language 🤷‍♂️)
