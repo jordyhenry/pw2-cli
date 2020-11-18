@@ -33,13 +33,13 @@ const createParseArguments = (io) => {
     args.options([
       {
         name: 'mode',
-        description: 'Resizing mode to be used (near, prev, next)',
+        description: 'Resizing mode to be used. Can be near, prev or next',
         defaultValue: config.supported_modes.near,
         init: (modeParam) => parseModeParameter(modeParam),
       },
       {
         name: 'filter',
-        description: 'File extensions to filter',
+        description: 'File extensions to filter separated by ,',
         defaultValue: config.supported_extensions.join(','),
         init: (filterParam) => parseFilterParameter(filterParam),
       },

@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+
+# Tests and Tests coverage
+src/tests/
+coverage/

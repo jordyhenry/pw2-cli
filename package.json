@@ -1,24 +1,33 @@
 {
   "name": "pw2-cli",
+  "description": "CLI to automatically re-scale your images for the right power of two dimensions",
   "version": "1.0.0",
-  "description": "",
   "main": "bin/cli.js",
   "bin": {
     "pw2-cli": "./bin/cli.js"
   },
-  "preferGlobal": true,
   "scripts": {
-    "start": "node ./src/index.js",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "preferGlobal": true,
   "dependencies": {
     "args": "^5.0.1",
     "pw2": "^1.0.0"
   },
   "devDependencies": {
     "jest": "^26.6.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordyhenry/pw2-cli"
+  },
+  "keywords": [
+    "power of two", "resize image", "pw2", "cli"
+  ],
+  "author": "Jordy Henry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordyhenry/pw2-cli/issues"
+  },
+  "homepage": "https://github.com/jordyhenry/pw2-cli"
 }
