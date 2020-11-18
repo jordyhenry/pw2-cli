@@ -26,5 +26,4 @@ const main = async () => {
   console.log(`New files create at ${resizedFilesFolder}`)
 }
 
-main()
-//module.exports.pw2_cli = main
+module.exports.pw2_cli = main
