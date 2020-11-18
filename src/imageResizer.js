@@ -3,17 +3,19 @@ const pw2 = createPw2()
 
 const createImageResizer = (io) => {
   const resizeFiles = async (fileList, resizingMode) => {
-    const baseDir = io.getDirName(fileList[0])
-    const newFolderPath = io.createNewFolder(baseDir)
+    if (fileList.length <= 0) return undefined
+
+    const baseDir = io.Directory.getDirName(fileList[0])
+    const newFolderPath = io.Directory.createNewFolder(baseDir)
 
     fileList.forEach(async (file, fileIndex) => {
-      const fileBuffer = io.readFile(file)
+      const fileBuffer = io.File.readFile(file)
       const resizedFileBuffer = await pw2.resizeAndGetBuffer(fileBuffer, resizingMode)
       
-      const filename = io.getFileName(file)
-      const newFilePath = io.resolvePath(newFolderPath, filename)
+      const filename = io.File.getFileName(file)
+      const newFilePath = io.Path.resolvePath(newFolderPath, filename)
       
-      io.createFile(newFilePath, resizedFileBuffer)
+      io.File.createFile(newFilePath, resizedFileBuffer)
       logProgress(fileList.length - 1, fileIndex)
     })
 
@@ -23,19 +25,21 @@ const createImageResizer = (io) => {
   const getFilesToResize = (input, extensionsToFilter) => {
     const files = []
     
-    if (io.isFile(input)) 
+    if (io.File.isFile(input)) 
       files.push(input)
-    else if (io.isDirectory(input))
-      files.push(...io.getFilesFromDirectory(input)) 
+    else if (io.Directory.isDirectory(input))
+      files.push(...io.File.getFilesFromDirectory(input)) 
 
     return files.filter(file => {
-      const fileExtension = io.getFileExtension(file)
+      const fileExtension = io.File.getFileExtension(file)
       return extensionsToFilter.includes(fileExtension)
     })
   }
 
   const logProgress = (target, current) => {
-    const percentage = Math.round((current * 100) / target)
+    let percentage = Math.round((current * 100) / target)
+    if (target <= 0) 
+      percentage = 100
 
     process.stdout.clearLine();
     process.stdout.cursorTo(0);

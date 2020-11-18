@@ -22,11 +22,11 @@ const createParseArguments = (io) => {
   }
 
   const parseInputParameter = (inputParam) => {
-    if (!inputParam) return io.getWorkingDirectory()
-    const absolutePath = io.getAbosultePath(inputParam)
+    if (!inputParam) return io.Directory.getWorkingDirectory()
+    const absolutePath = io.Path.getAbosultePath(inputParam)
     
-    if (io.isFile(absolutePath) || io.isDirectory(absolutePath)) return absolutePath
-    return io.getWorkingDirectory()
+    if (io.File.isFile(absolutePath) || io.Directory.isDirectory(absolutePath)) return absolutePath
+    return io.Directory.getWorkingDirectory()
   }
 
   const parse = (argv = process.argv) => {
@@ -46,7 +46,7 @@ const createParseArguments = (io) => {
       {
         name: 'input',
         description: 'Input file or directory with files to resize, if the path is a directory it will filter all files using the filter option',
-        defaultValue: io.getWorkingDirectory(),
+        defaultValue: io.Directory.getWorkingDirectory(),
         init: (inputParam) => parseInputParameter(inputParam),
       },
     ])

@@ -1,3 +1,13 @@
+/*
+  TODO : 
+    - Upload to github
+    - fill npm info
+      - package.json
+      - LICENSE
+      - README
+    - deploy
+*/
+
 'use strict'
 
 const { createIO } = require('./io')
@@ -16,4 +26,5 @@ const main = async () => {
   console.log(`New files create at ${resizedFilesFolder}`)
 }
 
-main ()
+main()
+//module.exports.pw2_cli = main
