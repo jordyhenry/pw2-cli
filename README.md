@@ -1,12 +1,27 @@
+# PW² CLI
 
-# pw2-cli
+<p align="center">
+  <img src="./demo.png" width="500"/>
+</p>
 
-> An easy cli to re-scale your images to the right power of two dimensions.
+<p align="center">A command line interface that easily allows you to re-scale your images to the right power of two dimensions.</p>
 
 ## Install
 
 ```bash
 npm i -g pw2-cli 
+```
+
+## Usage
+```bash
+# will resize all .png images inside the path using the previous-pw2 resizing mode
+./pw2-cli -f png -i ./my-images-path -m prev
+
+# will resize the image.jpg file using the next-pw2 resizing mode
+./pw2-cli -i ./my-folder/image.jpg -m next  
+
+# will resize all .jpg, .jpeg and .png files inside the current directory using the nearest-pw2 resizing mode
+./pw2-cli
 ```
 
 ## Supported Commands and Arguments
@@ -23,14 +38,13 @@ Commands:
     -v, --version         Output the version number
 ```
 
-## Motivation
-Games and real-time applications, in general, tend to prefer images and textures with power-of-two dimensions, they make it easier to generate eventual mipmaps, consume less GPU memory, and increase the overall performance.
+## But Why ?
 
-But it's time-consuming to find the right power-of-two dimensions for that 1200x612 texture and resize it yourself, that's where pw² comes in handy.
+Games and real-time applications, in general, tend to prefer images and textures with power-of-two dimensions, because they make it easier to generate mipmaps, consume less GPU memory, and increase the overall performance for shader operations.
 
-pw2-cli uses [pw²](https://github.com/jordyhenry/pw2) to rescale your textures to the right power-of-two dimensions automatically.
+However, finding the right power-of-two values for each dimension of each texture of each model in your application sounds time-consuming, and it is. [⚡PW²](https://www.npmjs.com/package/pw2) born from the necessity to make this a no-brainer, quick and easy process.
 
-This project was done for the cs50  Final Project assignment.
+This application was developed for the cs50 Final Project assignment and as a use case of [⚡PW²](https://www.npmjs.com/package/pw2) library.
 
 ## License
 
@@ -38,4 +52,4 @@ This project was done for the cs50  Final Project assignment.
 
 ## TODO
 - Update the project to use typescript
-- Fix any English misspells (sorry guys, it's not my mother language 🤷‍♂️)
+- Fix any English misspells (sorry guys, it's not my first language  🤷‍♂️)
