@@ -1,4 +1,4 @@
-# PW² CLI
+# ⚡ PW² CLI
 
 <p align="center">
   <img src="./demo.png" width="500"/>
