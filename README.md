@@ -6,7 +6,7 @@
 
 <p align="center">A command line interface that easily allows you to re-scale your images to the right power of two dimensions.</p>
 
-## Install
+## Installation
 
 ```bash
 npm i -g pw2-cli 
